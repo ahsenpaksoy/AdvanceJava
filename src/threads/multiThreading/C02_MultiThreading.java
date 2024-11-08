@@ -59,6 +59,9 @@ class Sayac{
             //      throw new RuntimeException(e);
             //  }
             C02_MultiThreading.sayac++;
+            //1-okuma
+            // 2-bir artırma
+            // 3-yazdırma
             System.out.println(Thread.currentThread().getName()+"-----> sayac : "+C02_MultiThreading.sayac);
         }
         //System.out.println(Thread.currentThread().getName()+"-----> sayac : "+C02_MultiThreading.sayac);

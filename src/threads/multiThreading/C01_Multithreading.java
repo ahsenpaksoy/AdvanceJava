@@ -82,7 +82,7 @@ class CounterThread extends Thread{
 
     @Override
     public void run() {
-        count();//her threade sayma işlemini verdik
+        count();//her bir threade count metodunu çağırma işlemini verdik
     }
 }
 

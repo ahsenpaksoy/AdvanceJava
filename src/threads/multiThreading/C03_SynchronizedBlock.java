@@ -45,13 +45,17 @@ public class C03_SynchronizedBlock {
 class Characters{
     //tek satırda 1den 10 a kadar yazdıran method
     public /*synchronized*/ void printNumbers(){
-        synchronized (this){
+        synchronized (this){//tüm metodun kodlarına sırayla erişilmesine gerek yok
+            //sadece bu blok yeterli
             for (int i = 1; i < 11; i++) {
                 System.out.print(i + " ");
             }
             System.out.println("----->" + Thread.currentThread().getName());
         }
-        //a'dan e'ye kadar alt alta yazdıralım
+
+        //a'dan e'ye kadar alt alta yazdırma:sıralı olmasına gerek yok
+        //bu kodlar hala asenkron bir şekilde threadler tarafından çalıştırılabilir.
+
         for (char i = 'a'; i <='e'; i++) {
             try {
                 Thread.sleep(500);
