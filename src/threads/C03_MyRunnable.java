@@ -11,7 +11,7 @@ public class C03_MyRunnable implements Runnable{
         // } catch (InterruptedException e) {
         //     System.out.println(e.getMessage());
         // }
-        //threadde yaptırmak istedigimiz islem
+        //threade yaptırmak istediğimiz işler(kodları)
         System.out.println("Çalışan Thread : "+Thread.currentThread().getName());
         System.out.println("MyRunnable ile olusturulan thread portakallı kek yapmaya başladı...");
     }

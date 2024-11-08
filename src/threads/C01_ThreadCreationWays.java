@@ -11,7 +11,7 @@ public class C01_ThreadCreationWays {
         //run methodunu override ederek thread classını extends ederek
         //1.yol
         Thread thread1=new C02_MyThread();
-        //thread1.run();//method cagırdım şu an main threadde methodu cagırdım
+        //thread1.run();//yeni bir thread başlatılmaz, main thread //method cagırdım şu an main threadde methodu cagırdım
         thread1.start();//threadi başlatmayı saglar run methodunu cagırır
         thread1.setName("Çay Getir"); //thread in adini degistirebiliriz
         //once main in thread i calisir
@@ -24,7 +24,8 @@ public class C01_ThreadCreationWays {
 
         //System.out.println("Main thread burada bitti. ");
 
-        //2.yol farklı çözüm anonymous class : isimsiz sınıf
+        //2.YOL :anonymous class:isimsiz sınıf
+        //Runnable içinde sadece 1 tane implemente edilecek metod var
         Thread thread3=new Thread(new Runnable() {
             @Override
             public void run() {
@@ -44,6 +45,8 @@ public class C01_ThreadCreationWays {
 
         //2.yol Lambda exp ile
         Thread thread4=new Thread(()->{
+            //run metodunun bodysindeyiz:)
+
             // try {
             //     Thread.sleep(3000);
             // } catch (InterruptedException e) {
@@ -66,17 +69,21 @@ public class C01_ThreadCreationWays {
 
         //join methodu hangi threadin icinde cagrılırsa bu thread ondan sonra cagrılan threadi bekletir
         try {
-            thread1.join();
+            thread1.join(); //hangi threadin kodları içinde çağrılırsa bu threadi bekletir:thread1 işini bitirene kadar
             thread2.join();//bekletir,thread1 bitince calışır
             thread3.join();//bekletir,thread2 bitince calışır
             thread4.join();//bekletir,thread3 bitince calışır
 
         } catch (InterruptedException e) {
             System.out.println(e.getMessage());
-        }
+        } //main thread artık devam edebilir
 
 
-        System.out.println("Main ile yaptığım işlem bitti.");
+        System.out.println("Main ile yaptığım işlem bitti."); //main thread görevi
+
+        //NOT:her thread kendi işini(run metodu içindeki kodları) senkron(sıralı)
+        //threadler kendi arasında ASENKRON çalışır.
+
 
 
     }
