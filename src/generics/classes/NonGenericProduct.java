@@ -6,11 +6,14 @@ package generics.classes;
 
 public class NonGenericProduct {
 
-    private Object code; //"Ali can",123;
-    //code fieldının data türü object(tüm data tiplerinin parenti)
-    //bundan kaynakli olusturulan tüm nesneler bu fieldin tum ozelliklerini kullanabilir
+    private Object code;//123,"A12"
+    
+    //code fieldının data tipi Object(tüm data tiplerinin parentı)
+    //olduğu için oluşturulan nesnelerin code özelliğinde tüm
+    //data tipleri kullanılabilir
 
     //getter-setter
+
     public Object getCode() {
         return code;
     }

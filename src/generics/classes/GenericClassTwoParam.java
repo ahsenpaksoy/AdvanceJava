@@ -1,21 +1,23 @@
 package generics.classes;
 
-//amacımız: farklı fieldlar da farklı data turune bagımsız olarak kullanma
+//amacımız: farklı fieldlarda farklı data tiplerini bağımsız olarak kullanma
 
-public class GenericClassTwoParam<S,U> {//S: String U: Integer //<K> <V> degil <K,V>
+public class GenericClassTwoParam<S,U> {//S:String U:Integer
 
-    private S  anahtar;//tüm data türlerini kullanabileyim
+    private S anahtar;//S:tüm NON-PRIMITIVE data tipleri
 
-    private U deger;//tüm data türlerini kullanabileyim
+    private U deger;//U:tüm NON-PRIMITIVE data tipleri
 
+    //paramli const
 
-    //param. cons.
     public GenericClassTwoParam(S anahtar, U deger) {
         this.anahtar = anahtar;
         this.deger = deger;
     }
 
+
     //getter-setter
+
 
     public S getAnahtar() {
         return anahtar;
