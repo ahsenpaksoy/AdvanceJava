@@ -6,16 +6,23 @@ package generics.bounding;
 //T : data tipi matematiksel işlemler yapılıcagi zaman number'a üstten sınırlandırma yapılabilir
 //generic yapılarda parametre olarak kullanılan data tipi üstten sınırlandırılabilir
 
-public class GenericUpperBound <T extends Number>{//T : String,User,Object  bunlar olamaz
+//generic yapılarda parametre olarak kullanılan data tipi üstten sınırlandırılabilir.
+//T data tipindeki field ile Matematiksel hesaplama yapacağız.
+//T:Number classı ve alt sınıflarıyla üstten sınırlandıralım
+//T:BYTE,SHORT,INTEGER,DOUBLE,LONG,FLOAT, NUMBER
+
+public class GenericUpperBound<T extends Number> {//T:String,User,Object  bunlar olamaz X X X
 
     public T[] numberArray;//field
 
-    //numberArray icindeki elemanin ortalamasını bulan bir method olusturalım
-    public Double countAvarage(){
+    //numberArrayin içindeki elemanların ortalamasını bulan bir metod
+    public Double countAverage(){
+
         double sum=0;
 
         for (T number:this.numberArray){
-            sum+=number.doubleValue();//data tiplerinin double'a donusmesini saglar
+
+            sum+=number.doubleValue();//elemanların double data tipine dönüştürülmesini sağlar.
         }
 
         double avg=sum/this.numberArray.length;

@@ -1,53 +1,69 @@
 package generics.bounding;
 
-//WildCard(?) : Joker ,bilinmeyen data tipi
-//generic yapıları kullanırken alttan veya üstten sınırlandırma yapılabilir
+//wildcard(?) : joker, bilinmeyen data tipi
+//generic yapıları kullanırken alttan veya üstten sınırlandırabiliriz.
+
+import generics.classes.GenericProduct;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
-import java.util.Objects;
 
 public class GenericWithWildCard {
 
     public static void main(String[] args) {
-        List<Integer>integerList=new ArrayList<>();
-        List<String>stringList=new ArrayList<>();
-        List<Double>doubleList=new ArrayList<>();
-        List<Float>floatList=new ArrayList<>();
-        List<Number>numberList=new ArrayList<>();
-        List<Object>objectList=new ArrayList<>();
 
-        //-----------------------------------------------------
+        List<Integer> integerList = new ArrayList<>();
+        List<Double> doubleList = new ArrayList<>();
+        List<String> stringList = new ArrayList<>();
+        List<Number> numberList = new ArrayList<>();
+        List<Object> objectList = new ArrayList<>();
+        objectList.add("asd");
+
+
+        //----------------------------------------------------
         addElements(integerList);
         //addElements(stringList);
-        //addElements(doubleList);//double ile Integer kardeştir
         //addElements(floatList);
+        // addElements(doubleList);--> Double Integerın parentı değil, kardeşidir.
         addElements(numberList);
         addElements(objectList);
-        System.out.println(integerList);
-        System.out.println(numberList);
-        System.out.println(objectList);
 
+        //----------------------------------------------------
+
+        multiplyByTwo(integerList);
+        multiplyByTwo(doubleList);
+        //multiplyByTwo(stringList);
+        multiplyByTwo(numberList);
+        //multiplyByTwo(objectList);-->Object Numberın Parentıdır!!!
 
     }
 
-    //Generic yapıyı alttan sınırlandırma
-    //task : Listeye 1Den 10A kadar tam sayılari yazdıran bir method olusturalım
-    //E:Integer ->Number->Object
-    public static void addElements(List<? super Integer> list){
-        for (int i = 1; i <11 ; i++) {
+    //generic yapıyı kullanırken alttan sınırlama
+    //Task : Listeye 1 den 10 a kadar tam sayıları yazdıran bir metod tanımlayalım.
+    //E:Integer-> Number -> Object
+    public static void addElements(List<? super Integer> list) {
+
+        for (int i = 1; i < 11; i++) {
             list.add(i);
         }
     }
 
-    //generic yapıyı kullanırken üstten sınırlandırma
-    //Task : Listedeki elemanlari 2 katına cıkarma işlemi uygulayınız
-    //E: Number ve altında bulunanlar
-    public static void multiplyByTwo(List<? extends Number> list){
 
-        list.stream().map(t->2*t.doubleValue());
+    //generic yapıyı kullanırken üstten sınırlama
+    //Task:listedeki elemanları 2 ile çarpan bir metod tanımlayalım
+    //E: Number ve childları
+    public static void multiplyByTwo(List<? extends Number> list) {
+
+        // list.add(3);
+
+        list.stream().map(t -> 2 * t.doubleValue());
+
     }
+
+    //NOT: List<?> ve List<T> benzer fakat farklı kullanımı vardır!!!
+    // List<T> list1,List<U> list2
+    // List<?> list1,List<?> list2
+
 
 }
 
