@@ -8,7 +8,7 @@ public class C02_MultiThreading {
 
         //task sayacın deger 2000 olana kadar devam etsin
         //task icin 2 tane thread olusturalım bilet satmasi icin gorevlendiricez
-        
+
         Thread thread1=new Thread(new Runnable() {
             @Override
             public void run() {
@@ -44,12 +44,12 @@ public class C02_MultiThreading {
         thread2.setName("Jerry");
         thread1.start();
         thread2.start();
+
     }
 }
 class Sayac{
 
     //sayacın degerini 1000 kez artırma işlemi yapan method
-
     public static synchronized void increment(){//synchronized : aynı anda sadece 1 thread ile işlem yapmaya izin verir
 
         for (int i = 1; i <1001 ; i++) {
