@@ -43,7 +43,9 @@ public class GenericMethod {
 
     }
 
-    //amaç:farkli data tipindeki arrayleri konsala yazdirmasi icin bir method olusturalım
+    //amaç: farklı data tipindeki arrayleri konsola yazdırma için metod tanımlama
+    //farklı datat tipleri ile kullanmak için: overloading....
+
     public static void printArr(Integer[]arr){
         Arrays.stream(arr).forEach(t-> System.out.print(t+" "));
         System.out.println();
