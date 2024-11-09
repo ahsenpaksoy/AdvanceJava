@@ -34,6 +34,6 @@ public class C07_Volatile {
             }
         });
         thread2.start();//2.çekirdek, cache:flag=1
-        
+
     }
 }
