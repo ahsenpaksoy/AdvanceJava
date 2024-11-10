@@ -81,8 +81,8 @@ public class C01_ThreadCreationWays {
 
         System.out.println("Main ile yaptığım işlem bitti."); //main thread görevi
 
-        //NOT:her thread kendi işini(run metodu içindeki kodları) senkron(sıralı)
-        //threadler kendi arasında ASENKRON çalışır.
+        //NOT:her thread kendi işini yaparken(run metodu içindeki kodları) senkron(sıralı) calisir,
+        //fakat threadler kendi arasında ASENKRON çalışır.
 
 
 
